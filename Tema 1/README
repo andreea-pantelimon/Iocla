@@ -1,0 +1,11 @@
+Pentru rezolvarea acestei teme am procedat astfel:
+
+Ca sa parcurg arborele am trimis root-ul si am apelat o functie de traversare a arborelui. In aceasta functie am introdus nodurile intr-un vector pe crae l-am denumit array. In array se afla numai elemente de tip char. Parcurgerea este facuta in preordine.
+
+Dupa efectuarea parcurgerii, am bagat elementele din array intr-o stiva pe care am folosit-o sa imi creez vectorul reversed_array. Asa cum e de inteles, reversed_array contine elementele din array, dar in ordine inversa. Scopul pentru care am inversat array-ul a fost pentru a ma ajuta mai tarziu la efectuarea calculelor.
+
+Apoi, am apelat functia atoi pentru fiecare element din reversed_array. In atoi, transform numai numerele (nu si operatiile) in int. Dupa efectuarea acestor operatii de schimbare, am sa introduc intr-un vector nou denumit res elementele obtinute (voi introduce numerele ca int-uri, iar operatiile ca si char-uri)
+
+In final, verific fiecare element din res. Daca elementul este numar, il adaug intr-o stiva. Daca numarul este o operatie, scot din stiva doua numere, efectuez operatia respectiva si adaug rezultatul in stiva.
+
+Rezultatul va fi ultimul element din stiva ramas care va fi afisat.

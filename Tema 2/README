@@ -1,0 +1,57 @@
+	Am sa explic mai jos gandirea pe care am avut-o pentru realizarea fiecarui 
+task in parte.
+
+TASK 1:
+	In registrul eax am cheia. Aplic cheia pe toata matricea imaginii, avand grija
+sa caut cuvantul "revient" si sa retin linia pe care se afla in cazul in care il
+gasesc (linia va fi stocata in registrul cx). In cazul in care cuvantul revient 
+nu a fost gasit am sa cresc eax cu unu si am sa aplic noua cheie din nou pe toata 
+matricea. Odata ce revient este gasit am sa ma opresc din a aplica cheia pe 
+matrice si am sa printez linia pe care a fost gasit cuvantul "revient".
+
+TASK 2:
+	Pentru realizarea acestui task am sa ma folosesc de taskul 1 pentru a obtine
+cheia si linia necesare pentru rezolvare. Am grija sa aplic pe toata matricea
+cheia originala si de-abia dupa ce am aplicat-o am sa caut linia in care trebuie
+implementat mesajul. Pentru a cauta linia am sa ma folosesc de registrul ecx si 
+am grija sa ii adun un 1 astfel incat sa se afle sub mesajul descoperit la taskul
+anterior.
+	Dupa ce gasesc linia in care trebuie implementat mesajul, iau fiecare litera 
+din mesaj in parte si il introduc de mana pe pozitia corespunzatoare, avand grija
+ca la final sa introduc si terminatorul de sir. Apoi, cu formula data in enunt
+am sa calculez noua cheia pe care am sa o aplic pe intreaga imagine asa cum am
+facut si la inceput.
+
+TASK 3:
+	Rezolvarea acestui task este relativ simpla. Am sa compar fiecare litera din
+mesaj si in functie de ce litera este am sa introduc pe pozitiile necesare litera
+in cod morse. Pentru fiecare litera si cifra (plus pentru virgula) am un label 
+special care se ocupa sa introduca "." sau "-" asa cum trebuie. De asemenea, am 
+grija sa nu introduc la finalul mesajului " " (space).
+
+TASK 4:
+	In acest task am sa ma folosesc foarte mult de Carry flag. Pentru a afla ce 
+bit contine fiecare litera din mesaj am sa ma folosesc de shl (am sa fac shiftare
+la stanga). In functie de CF (daca CF = 0 sau CF = 1) am sa intru in labe-urile 
+corespunzatoare (asa cum se poate observa si in cod). De aici am sa ma folosesc 
+de shr (am sa fac shift la dreapta) pentru a vedea daca numarul elementului
+matricei este par sau impar. Daca ma aflu in labelul zero si numarul meu este par
+atunci nu doresc sa modific rezultatul, in schimb daca numarul este impar am sa 
+scad un 1 (2 la puterea 0) pentru ai schimba ultimul bit in 0. 
+	Aceasi metoda se aplica si pentru labelul one numai ca invers. Daca numarul
+este impar nu imi doresc sa schimb elementul, dar daca numarul este par am sa adun 
+un 1 (2 la puterea 0) pentru ai schimba ultimul bit in 1.
+	De asemenea o as am grija sa aplic aceeasi metoda si pentru terminatorul de
+sir.
+
+TASK 5:
+	In acest task am sa iau fiecare bit in parte (avand grija sa am grupuri de 
+cate 8 biti - am sa ma folosesc de ebx) si am sa fac transformarea din binar in 
+zecimal pentru a abtine codurile ASCII. Cu ajutorul registrului ecx, am sa numar
+daca am sa intalnesc un grup de 8 biti care contine numai 0 pentru a stii cand
+sa ma opresc. In cod se poate vedea mai clar ceea ce fac. 
+
+TASK 6:
+	Mai intai am sa fac adunarile necesare pentru fiecare element din matrice, 
+avand grija sa introduc rezultatele in stiva. Apoi la final am sa introduc 
+valorile obtinute mai devreme incepand cu finalul matricei si terminand cu inceputul.
